@@ -1,0 +1,403 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Angular Acceleration</title>
+  <meta name="description" content="HaxeFlixel Snippets" />
+  <link rel="shortcut icon" href="/assets/favicon-4162b9f549e743070cabfafe03f5ddaf.ico" />
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.0.2/metisMenu.min.css" />
+  <link rel="stylesheet" href="/assets/bootstrap-social-d914f736b631f2ad4a901ff37e4f5ce8.css" />
+  <link rel="stylesheet" href="/assets/main-d5fba9990484df4c20278b9024866cf8.css" />
+  <link rel="stylesheet" href="/assets/highlighting-cd55f1b3eb60ece0cabbce91d974fd45.css" />
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><span><img id="brand-logo" src="/assets/hfm-logo-dd90fcf7231089963b86b89d1f11856b.svg" alt="HaxeFlixel Logo" /> HaxeFlixel Snippets</span></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-top-links navbar-nav">
+            <li><a href="/about">About</a></li>
+            <li><a href="/tutorials">Tutorials</a></li>
+            <li class="">
+              <a href="https://haxeflixel.com" title="" data-original-title="">
+                <i class="fa fa-fw fa-share"></i>
+                <span class="">Back to HaxeFlixel.com</span>
+              </a>
+            </li>
+          </ul>
+          <form class="navbar-form search-form" role="search" action="https://google.com/search" method="get">
+            <div class="form-group">
+              <input type="search" name="q" class="form-control" placeholder="Search" />
+              <input type="hidden" name="q" value="site:https://snippets.haxeflixel.com/" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container navbar-offset">
+      <div class="row-fluid container-main">
+        <div class="col-md-3">
+          <div class="well sidebar-nav" role="navigation">
+            <div class="nav">
+              <ul class="nav nav-list">
+                
+                
+                  <li id="li-basics" class=""><a href="/basics" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Basics</a>
+                    <ul id="list-basics" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-basics-screen"><a class="nav-item" href="/basics/screen"><i class="fa fa-dot-circle-o"></i> Screen</a></li>
+                      
+                      <li id="li-basics-adding"><a class="nav-item" href="/basics/adding"><i class="fa fa-dot-circle-o"></i> Adding</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-objects" class=""><a href="/objects" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Objects</a>
+                    <ul id="list-objects" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-objects-alive"><a class="nav-item" href="/objects/alive"><i class="fa fa-dot-circle-o"></i> Alive</a></li>
+                      
+                      <li id="li-objects-health"><a class="nav-item" href="/objects/health"><i class="fa fa-dot-circle-o"></i> Health</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-sprites" class=""><a href="/sprites" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Sprites</a>
+                    <ul id="list-sprites" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-sprites-making-sprites"><a class="nav-item" href="/sprites/making-sprites"><i class="fa fa-dot-circle-o"></i> Making Sprites</a></li>
+                      
+                      <li id="li-sprites-loading-sprites"><a class="nav-item" href="/sprites/loading-sprites"><i class="fa fa-dot-circle-o"></i> Loading Sprites</a></li>
+                      
+                      <li id="li-sprites-animation"><a class="nav-item" href="/sprites/animation"><i class="fa fa-dot-circle-o"></i> Animation</a></li>
+                      
+                      <li id="li-sprites-alpha"><a class="nav-item" href="/sprites/alpha"><i class="fa fa-dot-circle-o"></i> Alpha</a></li>
+                      
+                      <li id="li-sprites-color"><a class="nav-item" href="/sprites/color"><i class="fa fa-dot-circle-o"></i> Color</a></li>
+                      
+                      <li id="li-sprites-facing"><a class="nav-item" href="/sprites/facing"><i class="fa fa-dot-circle-o"></i> Facing</a></li>
+                      
+                      <li id="li-sprites-scale"><a class="nav-item" href="/sprites/scale"><i class="fa fa-dot-circle-o"></i> Scale</a></li>
+                      
+                      <li id="li-sprites-baked-rotations"><a class="nav-item" href="/sprites/baked-rotations"><i class="fa fa-dot-circle-o"></i> Baked Rotations</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-text" class=""><a href="/text" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Text</a>
+                    <ul id="list-text" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-text-flxtext"><a class="nav-item" href="/text/flxtext"><i class="fa fa-dot-circle-o"></i> FlxText</a></li>
+                      
+                      <li id="li-text-flxbitmaptext"><a class="nav-item" href="/text/flxbitmaptext"><i class="fa fa-dot-circle-o"></i> FlxBitmapText</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-movement" class=" active"><a href="/movement" class="nav-header"><i class="fa fa-arrow-circle-o-down"></i> Movement</a>
+                    <ul id="list-movement" class="collapse nav nav-list  in ">
+                      
+                      
+                      <li id="li-movement-velocity"><a class="nav-item" href="/movement/velocity"><i class="fa fa-dot-circle-o"></i> Velocity</a></li>
+                      
+                      <li id="li-movement-acceleration"><a class="nav-item" href="/movement/acceleration"><i class="fa fa-dot-circle-o"></i> Acceleration</a></li>
+                      
+                      <li id="li-movement-maxvelocity"><a class="nav-item" href="/movement/maxvelocity"><i class="fa fa-dot-circle-o"></i> MaxVelocity</a></li>
+                      
+                      <li id="li-movement-gravity"><a class="nav-item" href="/movement/gravity"><i class="fa fa-dot-circle-o"></i> Gravity</a></li>
+                      
+                      <li id="li-movement-jumping"><a class="nav-item" href="/movement/jumping"><i class="fa fa-dot-circle-o"></i> Jumping</a></li>
+                      
+                      <li id="li-movement-angle"><a class="nav-item" href="/movement/angle"><i class="fa fa-dot-circle-o"></i> Angle</a></li>
+                      
+                      <li id="li-movement-angular-velocity"><a class="nav-item" href="/movement/angular-velocity"><i class="fa fa-dot-circle-o"></i> Angular Velocity</a></li>
+                      
+                      <li id="li-movement-angular-acceleration"><a class="nav-item" href="/movement/angular-acceleration"><i class="fa fa-dot-circle-o"></i> Angular Acceleration</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-groups" class=""><a href="/groups" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Groups</a>
+                    <ul id="list-groups" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-groups-basic-group"><a class="nav-item" href="/groups/basic-group"><i class="fa fa-dot-circle-o"></i> Basic Group</a></li>
+                      
+                      <li id="li-groups-typed-group"><a class="nav-item" href="/groups/typed-group"><i class="fa fa-dot-circle-o"></i> Typed Group</a></li>
+                      
+                      <li id="li-groups-recycling"><a class="nav-item" href="/groups/recycling"><i class="fa fa-dot-circle-o"></i> Recycling</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-tiling" class=""><a href="/tiling" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Tiling</a>
+                    <ul id="list-tiling" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-tiling-tileblock"><a class="nav-item" href="/tiling/tileblock"><i class="fa fa-dot-circle-o"></i> Tileblock</a></li>
+                      
+                      <li id="li-tiling-tilemap"><a class="nav-item" href="/tiling/tilemap"><i class="fa fa-dot-circle-o"></i> Tilemap</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-overlap" class=""><a href="/overlap" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Overlap</a>
+                    <ul id="list-overlap" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-overlap-simple-overlap"><a class="nav-item" href="/overlap/simple-overlap"><i class="fa fa-dot-circle-o"></i> Simple Overlap</a></li>
+                      
+                      <li id="li-overlap-overlap-callbacks"><a class="nav-item" href="/overlap/overlap-callbacks"><i class="fa fa-dot-circle-o"></i> Overlap Callbacks</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-collision" class=""><a href="/collision" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Collision</a>
+                    <ul id="list-collision" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-collision-1-to-1-collision"><a class="nav-item" href="/collision/1-to-1-collision"><i class="fa fa-dot-circle-o"></i> 1-to-1 Collision</a></li>
+                      
+                      <li id="li-collision-immovable"><a class="nav-item" href="/collision/immovable"><i class="fa fa-dot-circle-o"></i> Immovable</a></li>
+                      
+                      <li id="li-collision-tilemap-collision"><a class="nav-item" href="/collision/tilemap-collision"><i class="fa fa-dot-circle-o"></i> Tilemap Collision</a></li>
+                      
+                      <li id="li-collision-moving-platforms"><a class="nav-item" href="/collision/moving-platforms"><i class="fa fa-dot-circle-o"></i> Moving Platforms</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-camera" class=""><a href="/camera" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Camera</a>
+                    <ul id="list-camera" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-camera-flash"><a class="nav-item" href="/camera/flash"><i class="fa fa-dot-circle-o"></i> Flash</a></li>
+                      
+                      <li id="li-camera-fade"><a class="nav-item" href="/camera/fade"><i class="fa fa-dot-circle-o"></i> Fade</a></li>
+                      
+                      <li id="li-camera-shake"><a class="nav-item" href="/camera/shake"><i class="fa fa-dot-circle-o"></i> Shake</a></li>
+                      
+                      <li id="li-camera-follow"><a class="nav-item" href="/camera/follow"><i class="fa fa-dot-circle-o"></i> Follow</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-input" class=""><a href="/input" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Input</a>
+                    <ul id="list-input" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-input-basics"><a class="nav-item" href="/input/basics"><i class="fa fa-dot-circle-o"></i> Basics</a></li>
+                      
+                      <li id="li-input-keyboard"><a class="nav-item" href="/input/keyboard"><i class="fa fa-dot-circle-o"></i> Keyboard</a></li>
+                      
+                      <li id="li-input-mouse"><a class="nav-item" href="/input/mouse"><i class="fa fa-dot-circle-o"></i> Mouse</a></li>
+                      
+                      <li id="li-input-button"><a class="nav-item" href="/input/button"><i class="fa fa-dot-circle-o"></i> Button</a></li>
+                      
+                    </ul>
+                  </li>
+                
+                  <li id="li-sound" class=""><a href="/sound" class="nav-header"><i class="fa fa-arrow-circle-o-right"></i> Sound</a>
+                    <ul id="list-sound" class="collapse nav nav-list ">
+                      
+                      
+                      <li id="li-sound-flxsound"><a class="nav-item" href="/sound/flxsound"><i class="fa fa-dot-circle-o"></i> FlxSound</a></li>
+                      
+                    </ul>
+                  </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          
+          
+          <div class="page-header">
+            <h1>
+            Angular Acceleration
+            </h1>
+          </div>
+          
+          
+          
+<div id="content">
+<p><code><a data-toggle="tooltip" data-placement="top" title="flixel.FlxObject.angularAcceleration" href="https://api.haxeflixel.com/flixel/FlxObject.html#angularAcceleration">angularAcceleration</a></code> is used to increase/decrease the <code><a data-toggle="tooltip" data-placement="top" title="flixel.FlxObject.angularVelocity" href="https://api.haxeflixel.com/flixel/FlxObject.html#angularVelocity">angularVelocity</a></code> of a <code><a data-toggle="tooltip" data-placement="top" title="flixel.FlxSprite" href="https://api.haxeflixel.com/flixel/FlxSprite.html">FlxSprite</a></code> in degrees per second.</p>
+<pre xmlns="" class="highlighted">
+<span class="mtk4">// object's angularVelocity will increase by 30 degrees per second</span>
+<span class="mtk13">object</span><span class="mtk1">.</span><span class="mtk13">angularAcceleration</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">30</span>
+</pre>
+
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+      <h3 class="panel-title"><i class="fa fa-play-circle fa-lg fa-fw"></i> Demonstration</h3>
+  </div>
+  <div class="panel-body">
+    <iframe class="demo" src="/demos/movement/angular-acceleration/export/html5/bin" width="320" height="240" allowtransparency="true"></iframe>
+  </div>
+
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-code fa-lg fa-fw"></i> Source</h3>
+  </div>
+  <div class="panel-body">
+      <div class="panel-group" id="accordion-source-playstate-hx" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading-source-playstate-hx">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion-source-playstate-hx" href="#collapse-source-playstate-hx" aria-expanded="true" aria-controls="collapse-source-playstate-hx">
+          <span class="pull-right"><i class="source-chevron fa fa-chevron-circle-right fa-lg fa-fw"></i></span>source/PlayState.hx
+        </a>
+      </h4>
+    </div>
+    <div id="collapse-source-playstate-hx" class="source-body panel-collapse collapse" role="tabpanel" aria-labelledby="heading-source-playstate-hx">
+      <pre xmlns="" class="highlighted">
+<span class="mtk5">package</span><span class="mtk1">;</span>
+
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxG</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxSprite</span><span class="mtk1">;</span>
+<span class="mtk16">import</span><span class="mtk1"> flixel.</span><span class="mtk11">FlxState</span><span class="mtk1">;</span>
+
+<span class="mtk5">class</span><span class="mtk1"> </span><span class="mtk11">PlayState</span><span class="mtk1"> </span><span class="mtk5">extends</span><span class="mtk1"> </span><span class="mtk11">FlxState</span>
+<span class="mtk1">{</span>
+<span class="mtk1">    </span><span class="mtk5">var</span><span class="mtk1"> </span><span class="mtk13">sprite</span><span class="mtk17">:</span><span class="mtk11">FlxSprite</span><span class="mtk1">;</span>
+
+<span class="mtk1">    </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">create</span><span class="mtk1">()</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">create</span><span class="mtk1">();</span>
+
+<span class="mtk1">        </span><span class="mtk13">sprite</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk5">new</span><span class="mtk1"> </span><span class="mtk11">FlxSprite</span><span class="mtk1">(</span><span class="mtk9">"assets/arrow.png"</span><span class="mtk1">);</span>
+<span class="mtk1">        </span><span class="mtk13">sprite</span><span class="mtk1">.</span><span class="mtk12">screenCenter</span><span class="mtk1">();</span>
+<span class="mtk1">        </span><span class="mtk12">add</span><span class="mtk1">(</span><span class="mtk13">sprite</span><span class="mtk1">);</span>
+
+<span class="mtk1">        </span><span class="mtk13">sprite</span><span class="mtk1">.</span><span class="mtk13">angularAcceleration</span><span class="mtk1"> </span><span class="mtk17">=</span><span class="mtk1"> </span><span class="mtk8">30</span><span class="mtk1">;</span>
+<span class="mtk1">    }</span>
+
+<span class="mtk1">    </span><span class="mtk5">override</span><span class="mtk1"> </span><span class="mtk5">public</span><span class="mtk1"> </span><span class="mtk5">function</span><span class="mtk1"> </span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk17">:</span><span class="mtk11">Float</span><span class="mtk1">)</span>
+<span class="mtk1">    {</span>
+<span class="mtk1">        </span><span class="mtk16">if</span><span class="mtk1"> (</span><span class="mtk11">Math</span><span class="mtk1">.</span><span class="mtk12">abs</span><span class="mtk1">(</span><span class="mtk13">sprite</span><span class="mtk1">.</span><span class="mtk13">angularVelocity</span><span class="mtk1">) </span><span class="mtk17">&gt;=</span><span class="mtk1"> </span><span class="mtk8">600</span><span class="mtk1">)</span>
+<span class="mtk1">            </span><span class="mtk13">sprite</span><span class="mtk1">.</span><span class="mtk13">angularAcceleration</span><span class="mtk1"> </span><span class="mtk17">*=</span><span class="mtk1"> </span><span class="mtk17">-</span><span class="mtk8">1</span><span class="mtk1">;</span>
+
+<span class="mtk1">        </span><span class="mtk5">super</span><span class="mtk1">.</span><span class="mtk12">update</span><span class="mtk1">(</span><span class="mtk13">elapsed</span><span class="mtk1">);</span>
+<span class="mtk1">    }</span>
+<span class="mtk1">}</span>
+</pre>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="panel-footer text-right">
+    <a href="https://github.com/HaxeFlixel/snippets.haxeflixel.com/tree/master/demos/movement/angular-acceleration" role="button" class="btn btn-social btn-github"><i class="fa fa-github"></i> View Source on GitHub</a>
+  </div>
+</div>
+
+
+          
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-bookmark fa-lg fa-fw"></i> See Also</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="fa-ul">
+    
+    
+      <li><i class="fa-li fa fa-dot-circle-o"></i><a href="/movement/acceleration">Movement/Acceleration</a></li>
+    
+      <li><i class="fa-li fa fa-dot-circle-o"></i><a href="/movement/angle">Movement/Angle</a></li>
+    
+    </ul>
+  </div>
+</div>
+
+
+          
+
+
+
+<div id="tags" class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-tags fa-lg fa-fw"></i> <a href="/tags">Tags</a></h3>
+  </div>
+    <div class="panel-body">
+        
+        <a href="/tags/movement"><span class="label label-primary">movement</span></a>
+        
+    </div>
+</div>
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/movement">Movement</a></li>
+  <li class="active">Angular Acceleration</li>
+</ol>  
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="social col-md-4">
+        <iframe src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=snippets.haxeflixel.com&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+        <iframe src="https://carlo.github.io/patreon-buttons/patreon-btn.html?creator=haxeflixel" allowtransparency="true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+      </div>
+      <div class="hf-link col-md-4">
+        <span<small>Powered By <a href="https://haxeflixel.com"><span><img id="footer-logo" src="/assets/haxeflixel-e60d5f60a2e20f0d4c975fab21bc39ac.svg" alt="HaxeFlixel Logo" /> HaxeFlixel</span></a>
+      </span<small></div>
+    </div>
+</div>
+</footer>
+
+
+  <!-- scripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/metisMenu/2.0.2/metisMenu.min.js"></script>
+
+  <script src="/assets/main-dcbc92bb98b104a6cbe23bcce6adb2a1.js"></script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-63717309-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</body></html>
